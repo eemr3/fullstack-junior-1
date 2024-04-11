@@ -1,3 +1,4 @@
+import { Footer } from '../components/Footer';
 import { Hero } from '../components/Hero';
 import { LeftHero } from '../components/Hero/Left';
 import { RightHero } from '../components/Hero/Right';
@@ -11,6 +12,7 @@ export default function Home() {
         <LeftHero />
         <RightHero />
       </Hero>
+      <Footer />
     </div>
   );
 }
