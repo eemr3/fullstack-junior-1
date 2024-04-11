@@ -1,4 +1,4 @@
-const jobs = [
+export const jobs = [
   {
     id: 1,
     job: 'Full Stack Developer',
