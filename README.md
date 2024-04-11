@@ -1,101 +1,36 @@
-# Desafio Técnico - Full Stack Junior
+This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-## Objetivos do desafio
+## Getting Started
 
-Este desafio irá verificar se o candidato possuí as seguintes habilidades em um nível básico:
+First, run the development server:
 
-- Noções de Nextjs
-- Noções de Tailwind
-- Noções de Backend
-- Git e Github
+```bash
+npm run dev
+# or
+yarn dev
+# or
+pnpm dev
+# or
+bun dev
+```
 
-## O que deverá ser desenvolvido
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-- O candidato deverá escolher e desenvolver uma das heros sections dentro deste figma: https://encurtador.com.br/buzKZ
-- O candidato deverá desenvolver uma rota backend utilizando Nextjs
+You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
-## Requisitos técnico
+This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
 
-- O projeto foi criado utilizando o Nextjs
-- Foi configurado tailwind
-- Frontend
-  - A rota / exibe um hero, de acordo com o design escolhido, com pixel perfect
-- Backend
+## Learn More
 
-  - Todas as rotas recebem um secret
-    - Caso o secret seja diferente de "naranja-labs", deverá retornar um erro com o melhor status code para essa situação.
-  - A rota /jobs retorna um json com todas as informações do arquivo jobs.ts (O local onde este arquivo esta localizado pode ser alterado de acordo com seu desejo)
-  - a rota /jobs?level=Junior deverá retornar apenas os jobs de level Junior
-  - a rota /job/[id] deverá ter o seguinte comportamento:
-    - Caso o id não exista no arquivo jobs.ts, deverá retornar um erro com um status code mais adequado para essa situação e uma messagem.
-    - Caso o id exista, deverá retornar apenas o job ao qual o id seja correspondente.
-  - a rota /job/submit deverá receber um body com a seguinte estrutura:
+To learn more about Next.js, take a look at the following resources:
 
-    ```
-    {
-      name: string,
-      age: number,
-      phone: string,
-      state:string,
-      city: string
-    }
-    ```
+- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
+- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
-    - Caso o body não seja enviado, deverá retornar um erro com o melhor status code para esse caso e uma mensagem
-    - Caso esteja tudo ok com o body, deverá retornar um json com a seguinte estrutura:
+You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
 
-    ```
-    {
-      message: Thank you for your application, ${name}
-    }
-    ```
+## Deploy on Vercel
 
-  - Todas as rotas recebem um secret
-    - Caso o secret seja diferente de "naranja-labs", deverá retornar um erro com o melhor status code para essa situação.
-  - A rota /jobs retorna um json com todas as informações do arquivo jobs.ts (O local onde este arquivo esta localizado pode ser alterado de acordo com seu desejo)
-  - a rota /jobs?level=Junior deverá retornar apenas os jobs de level Junior
-  - a rota /job/[id] deverá ter o seguinte comportamento:
-    - Caso o id não exista no arquivo jobs.ts, deverá retornar um erro com um status code mais adequado para essa situação e uma messagem.
-    - Caso o id exista, deverá retornar apenas o job ao qual o id seja correspondente.
-  - a rota /job/submit deverá receber um body com a seguinte estrutura:
+The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
-    ```
-    {
-      name: string,
-      age: number,
-      phone: string,
-      state:string,
-      city: string
-    }
-    ```
-
-    - Caso o body não seja enviado, deverá retornar um erro com o melhor status code para esse caso e uma mensagem
-    - Caso esteja tudo ok com o body, deverá retornar um json com a seguinte estrutura:
-
-    ```
-    {
-      message: Thank you for your application, ${name}
-    }
-    ```
-
-## Como deverá ser feito o desenvolvimento e entrega
-
-- Faça um fork desse repositório
-- No seu readme, inclua detalhes como:
-  - Nome completo
-  - Linkedin
-  - Github
-  - Telefone
-  - Email
-- Ao finalizar, envie o link do seu repositório para mateus@naranjalabs.dev
-
-## Dicas
-
-- Atente-se a qualidade do seu código
-- Atente-se ao pixel perfect
-- Cuidado com commit bomba
-- Faça commits bem descritivos
-
-## Observações
-
-- Após a data final de entrega, nenhum novo commit será considerado
+Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
