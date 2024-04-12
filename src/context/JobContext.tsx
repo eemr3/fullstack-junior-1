@@ -2,7 +2,7 @@
 
 import { createContext, useContext, useState } from 'react';
 import { Job } from '../common/interfaces/jobs';
-import { getJobById, getJobsByLevel } from '../service/api';
+import { getAllJobs, getJobById, getJobsByLevel } from '../service/api';
 
 interface JobProviderProps {
   children: React.ReactNode;
@@ -29,7 +29,10 @@ export function JobProvider({ children }: JobProviderProps) {
   const [jobs, setJobs] = useState<Job[]>([]);
 
   const handleSearch = async () => {
-    if (searchForLevel) {
+    if (searchForLevel === '' && searchForId === '') {
+      const data = await getAllJobs();
+      setJobs(data.jobs);
+    } else if (searchForLevel) {
       const data = await getJobsByLevel(searchForLevel);
 
       if (data.status === 200) {
