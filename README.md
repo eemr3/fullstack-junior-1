@@ -11,7 +11,7 @@ Este desafio irá verificar se o candidato possuí as seguintes habilidades em u
 
 ## O que deverá ser desenvolvido
 
-- O candidato deverá escolher e desenvolver uma das heros sections dentro deste figma: https://encurtador.com.br/buzKZ
+- O candidato deverá escolher e desenvolver uma hero
 - O candidato deverá desenvolver uma rota backend utilizando Nextjs
 
 ## Requisitos técnico
@@ -50,52 +50,24 @@ Este desafio irá verificar se o candidato possuí as seguintes habilidades em u
     }
     ```
 
-  - Todas as rotas recebem um secret
-    - Caso o secret seja diferente de "naranja-labs", deverá retornar um erro com o melhor status code para essa situação.
-  - A rota /jobs retorna um json com todas as informações do arquivo jobs.ts (O local onde este arquivo esta localizado pode ser alterado de acordo com seu desejo)
-  - a rota /jobs?level=Junior deverá retornar apenas os jobs de level Junior
-  - a rota /job/[id] deverá ter o seguinte comportamento:
-    - Caso o id não exista no arquivo jobs.ts, deverá retornar um erro com um status code mais adequado para essa situação e uma messagem.
-    - Caso o id exista, deverá retornar apenas o job ao qual o id seja correspondente.
-  - a rota /job/submit deverá receber um body com a seguinte estrutura:
+## Stack utilizada
 
-    ```
-    {
-      name: string,
-      age: number,
-      phone: string,
-      state:string,
-      city: string
-    }
-    ```
+**Front-end:** Nextjs, TypeScript, Context Api, TailwindCSS
 
-    - Caso o body não seja enviado, deverá retornar um erro com o melhor status code para esse caso e uma mensagem
-    - Caso esteja tudo ok com o body, deverá retornar um json com a seguinte estrutura:
+**Back-end:** Nextjs (Api Route)
 
-    ```
-    {
-      message: Thank you for your application, ${name}
-    }
-    ```
+## Informação
 
-## Como deverá ser feito o desenvolvimento e entrega
+Para utilizar os recusos de listagem "GET" e envio de informações (fake) "POST" clicar no botão "Let's Collaborate" que será redirecionado para a página "/jobs", no navbar o item (link) "Home" redireciona para o Hero.
 
-- Faça um fork desse repositório
-- No seu readme, inclua detalhes como:
-  - Nome completo
-  - Linkedin
-  - Github
-  - Telefone
-  - Email
-- Ao finalizar, envie o link do seu repositório para mateus@naranjalabs.dev
+## Demo
 
-## Dicas
+<img src="./public/Desafio-Técnico-Full-Stack-Junior-_1_.gif" />
 
-- Atente-se a qualidade do seu código
-- Atente-se ao pixel perfect
-- Cuidado com commit bomba
-- Faça commits bem descritivos
+## Autor
 
-## Observações
-
-- Após a data final de entrega, nenhum novo commit será considerado
+- Emerson Moreira
+- [Linkedin](https://www.linkedin.com/in/emerson-moreira)
+- [Github](https://github.com/eemr3)
+- (61) 9 9867-3265
+- eemr3@yahoo.com.br
