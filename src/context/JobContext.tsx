@@ -18,6 +18,24 @@ interface JobContextData {
   handleSearch: () => Promise<void>;
   errorMessage: string;
   setErrorMessage: (message: string) => void;
+  showModal: boolean;
+  messageSuccess: string;
+  setMessageSuccess: (message: string) => void;
+  setShowModal: (show: boolean) => void;
+  dataInput: {
+    name: string;
+    age: string;
+    phone: string;
+    city: string;
+    state: string;
+  };
+  setDataInput: (data: {
+    name: string;
+    age: string;
+    phone: string;
+    city: string;
+    state: string;
+  }) => void;
 }
 
 export const JobContext = createContext<JobContextData>({} as JobContextData);
@@ -26,7 +44,16 @@ export function JobProvider({ children }: JobProviderProps) {
   const [searchForLevel, setSearchForLevel] = useState<string>('');
   const [searchForId, setSearchForId] = useState<string>('');
   const [errorMessage, setErrorMessage] = useState<string>('');
+  const [showModal, setShowModal] = useState(false);
   const [jobs, setJobs] = useState<Job[]>([]);
+  const [messageSuccess, setMessageSuccess] = useState<string>('');
+  const [dataInput, setDataInput] = useState({
+    name: '',
+    age: '',
+    phone: '',
+    city: '',
+    state: '',
+  });
 
   const handleSearch = async () => {
     if (searchForLevel === '' && searchForId === '') {
@@ -65,6 +92,12 @@ export function JobProvider({ children }: JobProviderProps) {
         handleSearch,
         errorMessage,
         setErrorMessage,
+        showModal,
+        setShowModal,
+        dataInput,
+        setDataInput,
+        messageSuccess,
+        setMessageSuccess,
       }}
     >
       {children}
