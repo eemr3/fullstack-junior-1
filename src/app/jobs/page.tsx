@@ -1,41 +1,54 @@
 'use client';
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 import { Card } from '../../components/Card';
-import { Job, JobsProps } from '../../common/interfaces/jobs';
-import { Navbar } from '../../components/Navbar';
 
-const SECRETE_KEY = 'naranja-labs'; // Essa chave deve ser guardada em um arquivo .env. Para fins de demonstração/didático, ela está aqui.
+import { Navbar } from '../../components/Navbar';
+import Search from '../../components/Search';
+import { useJobs } from '../../context/JobContext';
+import { getAllJobs } from '../../service/api';
 
 export default function JobsPage() {
-  const [jobs, setJobs] = useState<Job[]>([]);
+  const { searchForLevel, searchForId, jobs, setJobs, errorMessage, setErrorMessage } =
+    useJobs();
 
   useEffect(() => {
-    fetch('http://localhost:3000/api/jobs', {
-      method: 'GET',
-      headers: {
-        Authorization: `Bearer ${SECRETE_KEY}`,
-      },
-    })
-      .then((response) => response.json())
-      .then((data) => {
-        setJobs(data.jobs);
-      })
-      .catch((error) => {
-        console.error('Error:', error);
-      });
-  }, []);
+    if (searchForLevel === '' || searchForId === '') {
+      const getAllJobsData = async () => {
+        const data = await getAllJobs();
+        if (data.status === 200) {
+          setJobs(data.jobs);
+        } else {
+          setJobs([]);
+          setErrorMessage(data.message);
+        }
+      };
+      getAllJobsData();
+    }
+  }, [searchForLevel, searchForId, setJobs, setErrorMessage]);
 
   return (
-    <div className="bg-[#515DEF] h-screen">
+    <>
       <Navbar />
-      <div className="container mx-auto py-40">
+      <div className="bg-[#515DEF] h-screen w-[60%] fixed -z-10"></div>
+      <div className="container mx-auto py-28 z-50">
         <h1 className="mb-10 text-3xl text-white font-bold">Our Jobs</h1>
-        <div className="container mx-auto grid grid-cols-3 gap-2">
-          {jobs.map((job) => (
-            <Card key={job.id} job={job} />
-          ))}
+        <Search />
+        <div
+          className={`container mx-auto ${
+            jobs.length > 0
+              ? 'grid  grid-cols-3 gap-2'
+              : 'flex justify-center items-center h-96'
+          }`}
+        >
+          {jobs.length > 0 ? (
+            jobs.map((job) => <Card key={job.id} job={job} />)
+          ) : (
+            <p className="text-white font-semibold text-3xl m-auto text-center">
+              {errorMessage}
+            </p>
+          )}
         </div>
       </div>
-    </div>
+    </>
   );
 }
