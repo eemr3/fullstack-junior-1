@@ -6,6 +6,7 @@ import { Navbar } from '../../components/Navbar';
 import Search from '../../components/Search';
 import { useJobs } from '../../context/JobContext';
 import { getAllJobs } from '../../service/api';
+import { Modal } from '../../components/Modal';
 
 export default function JobsPage() {
   const { searchForLevel, searchForId, jobs, setJobs, errorMessage, setErrorMessage } =
@@ -28,6 +29,7 @@ export default function JobsPage() {
 
   return (
     <>
+      <Modal />
       <Navbar />
       <div className="bg-[#515DEF] h-screen w-[60%] fixed -z-10"></div>
       <div className="container mx-auto py-28 z-50">
