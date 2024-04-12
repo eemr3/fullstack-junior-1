@@ -56,6 +56,11 @@ Este desafio irá verificar se o candidato possuí as seguintes habilidades em u
 
 **Back-end:** Nextjs (Api Route)
 
+## Rodando localmente
+- Clone o repositório
+- Na pasta do projeto use o comando no termial ``npm install`` para instalar as dependencias
+- Após a instalação da dependencias use o comando ``npm run dev``
+- No navegador abra o endereço ``http://localhost:3000``
 ## Informação
 
 Para utilizar os recusos de listagem "GET" e envio de informações (fake) "POST" clicar no botão "Let's Collaborate" que será redirecionado para a página "/jobs", no navbar o item (link) "Home" redireciona para o Hero.
