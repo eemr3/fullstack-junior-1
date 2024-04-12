@@ -41,6 +41,7 @@ export default function Search() {
             checked={selectTypeSearch === 'ID'}
             onChange={() => {
               setSearchForId('1');
+              setSearchForLevel('');
               setSelectTypeSearch('ID');
             }}
             className="h-4 w-4 border-gray-300 focus:ring-2 focus:ring-blue-300"

@@ -34,8 +34,6 @@ export const getJobsByLevel = async (level: string) => {
 
 export const getJobById = async (id: string) => {
   try {
-    console.log(id);
-
     const result = await fetch(`http://localhost:3000/api/jobs/${id}`, {
       method: 'GET',
       headers: {

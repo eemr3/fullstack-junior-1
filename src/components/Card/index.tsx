@@ -13,7 +13,7 @@ export function Card({ job }: JobsProps) {
       city: '',
       state: '',
     });
-    setMessageSuccess('');
+
     setShowModal(true);
   };
   return (

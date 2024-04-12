@@ -29,7 +29,7 @@ export function Navbar() {
           <div className="w-[10%]">
             <Link
               className="bg-[#515DEF] w-[149px] p-2 text-center text-white rounded"
-              href="/contact"
+              href="/#"
             >
               Contact Us
             </Link>
