@@ -5,7 +5,7 @@ import { JobsProps } from '../../common/interfaces/jobs';
 export function Card({ job }: JobsProps) {
   return (
     <div>
-      <div className="group p-4 bg-gray-700  lg:p-8">
+      <div className="group p-4 bg-gray-700 opacity-95  lg:p-8">
         <div className="mb-3 text-right"></div>
         <div className="flex items-center gap-x-2"></div>
         <div className="my-4">
