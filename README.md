@@ -1,36 +1,73 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Desafio Técnico - Full Stack Junior
 
-## Getting Started
+## Objetivos do desafio
 
-First, run the development server:
+Este desafio irá verificar se o candidato possuí as seguintes habilidades em um nível básico:
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+- Noções de Nextjs
+- Noções de Tailwind
+- Noções de Backend
+- Git e Github
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## O que deverá ser desenvolvido
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- O candidato deverá escolher e desenvolver uma hero
+- O candidato deverá desenvolver uma rota backend utilizando Nextjs
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+## Requisitos técnico
 
-## Learn More
+- O projeto foi criado utilizando o Nextjs
+- Foi configurado tailwind
+- Frontend
+  - A rota / exibe um hero, de acordo com o design escolhido, com pixel perfect
+- Backend
 
-To learn more about Next.js, take a look at the following resources:
+  - Todas as rotas recebem um secret
+    - Caso o secret seja diferente de "naranja-labs", deverá retornar um erro com o melhor status code para essa situação.
+  - A rota /jobs retorna um json com todas as informações do arquivo jobs.ts (O local onde este arquivo esta localizado pode ser alterado de acordo com seu desejo)
+  - a rota /jobs?level=Junior deverá retornar apenas os jobs de level Junior
+  - a rota /job/[id] deverá ter o seguinte comportamento:
+    - Caso o id não exista no arquivo jobs.ts, deverá retornar um erro com um status code mais adequado para essa situação e uma messagem.
+    - Caso o id exista, deverá retornar apenas o job ao qual o id seja correspondente.
+  - a rota /job/submit deverá receber um body com a seguinte estrutura:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+    ```
+    {
+      name: string,
+      age: number,
+      phone: string,
+      state:string,
+      city: string
+    }
+    ```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+    - Caso o body não seja enviado, deverá retornar um erro com o melhor status code para esse caso e uma mensagem
+    - Caso esteja tudo ok com o body, deverá retornar um json com a seguinte estrutura:
 
-## Deploy on Vercel
+    ```
+    {
+      message: Thank you for your application, ${name}
+    }
+    ```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Stack utilizada
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+**Front-end:** Nextjs, TypeScript, Context Api, TailwindCSS
+
+**Back-end:** Nextjs (Api Route)
+
+## Informação
+
+Para utilizar os recusos de listagem "GET" e envio de informações (fake) "POST" clicar no botão "Let's Collaborate" que será redirecionado para a página "/jobs", no navbar o item (link) "Home" redireciona para o Hero.
+
+## Demo
+
+<img src="./public/Desafio-Técnico-Full-Stack-Junior-_1_.gif" />
+
+## Autor
+
+- Emerson Moreira
+- [Linkedin](https://www.linkedin.com/in/emerson-moreira)
+- [Github](https://github.com/eemr3)
+- (61) 9 9867-3265
+- eemr3@yahoo.com.br
